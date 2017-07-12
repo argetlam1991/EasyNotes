@@ -13,6 +13,8 @@
 		483FFF781F15CA4E009E9D02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483FFF761F15CA4E009E9D02 /* Main.storyboard */; };
 		483FFF7A1F15CA4E009E9D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483FFF791F15CA4E009E9D02 /* Assets.xcassets */; };
 		483FFF7D1F15CA4E009E9D02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483FFF7B1F15CA4E009E9D02 /* LaunchScreen.storyboard */; };
+		483FFF851F15CCFA009E9D02 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 483FFF841F15CCFA009E9D02 /* GoogleService-Info.plist */; };
+		883CFB6B62D8C15DDE6B6B73 /* libPods-EasyNotes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A97DAF2B9CCCCB99CE452145 /* libPods-EasyNotes.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		483FFF791F15CA4E009E9D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		483FFF7C1F15CA4E009E9D02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		483FFF7E1F15CA4E009E9D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		483FFF841F15CCFA009E9D02 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A97DAF2B9CCCCB99CE452145 /* libPods-EasyNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E10E4486C0C602104E984058 /* Pods-EasyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyNotes/Pods-EasyNotes.release.xcconfig"; sourceTree = "<group>"; };
+		F38069CBBD9160E1A130F66F /* Pods-EasyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyNotes/Pods-EasyNotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				883CFB6B62D8C15DDE6B6B73 /* libPods-EasyNotes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 			children = (
 				483FFF6C1F15CA4E009E9D02 /* EasyNotes */,
 				483FFF6B1F15CA4E009E9D02 /* Products */,
+				6F875768981347ECCA82BFDB /* Pods */,
+				4FEBFD28ED2568DEC6C7D225 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,14 +67,13 @@
 		483FFF6C1F15CA4E009E9D02 /* EasyNotes */ = {
 			isa = PBXGroup;
 			children = (
+				483FFF841F15CCFA009E9D02 /* GoogleService-Info.plist */,
 				483FFF701F15CA4E009E9D02 /* AppDelegate.h */,
 				483FFF711F15CA4E009E9D02 /* AppDelegate.m */,
 				483FFF731F15CA4E009E9D02 /* ViewController.h */,
 				483FFF741F15CA4E009E9D02 /* ViewController.m */,
 				483FFF761F15CA4E009E9D02 /* Main.storyboard */,
-				483FFF791F15CA4E009E9D02 /* Assets.xcassets */,
 				483FFF7B1F15CA4E009E9D02 /* LaunchScreen.storyboard */,
-				483FFF7E1F15CA4E009E9D02 /* Info.plist */,
 				483FFF6D1F15CA4E009E9D02 /* Supporting Files */,
 			);
 			path = EasyNotes;
@@ -74,9 +82,28 @@
 		483FFF6D1F15CA4E009E9D02 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				483FFF791F15CA4E009E9D02 /* Assets.xcassets */,
+				483FFF7E1F15CA4E009E9D02 /* Info.plist */,
 				483FFF6E1F15CA4E009E9D02 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4FEBFD28ED2568DEC6C7D225 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A97DAF2B9CCCCB99CE452145 /* libPods-EasyNotes.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F875768981347ECCA82BFDB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F38069CBBD9160E1A130F66F /* Pods-EasyNotes.debug.xcconfig */,
+				E10E4486C0C602104E984058 /* Pods-EasyNotes.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 483FFF811F15CA4E009E9D02 /* Build configuration list for PBXNativeTarget "EasyNotes" */;
 			buildPhases = (
+				7204B829BF8FF659DADEB02E /* [CP] Check Pods Manifest.lock */,
 				483FFF661F15CA4E009E9D02 /* Sources */,
 				483FFF671F15CA4E009E9D02 /* Frameworks */,
 				483FFF681F15CA4E009E9D02 /* Resources */,
+				98D5014728E8A09B6D82855D /* [CP] Embed Pods Frameworks */,
+				7D8BF69ED2A67262752B3238 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,12 +169,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				483FFF7D1F15CA4E009E9D02 /* LaunchScreen.storyboard in Resources */,
+				483FFF851F15CCFA009E9D02 /* GoogleService-Info.plist in Resources */,
 				483FFF7A1F15CA4E009E9D02 /* Assets.xcassets in Resources */,
 				483FFF781F15CA4E009E9D02 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7204B829BF8FF659DADEB02E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7D8BF69ED2A67262752B3238 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyNotes/Pods-EasyNotes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98D5014728E8A09B6D82855D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyNotes/Pods-EasyNotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		483FFF661F15CA4E009E9D02 /* Sources */ = {
@@ -273,6 +352,7 @@
 		};
 		483FFF821F15CA4E009E9D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F38069CBBD9160E1A130F66F /* Pods-EasyNotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H69H7F76LV;
@@ -285,6 +365,7 @@
 		};
 		483FFF831F15CA4E009E9D02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E10E4486C0C602104E984058 /* Pods-EasyNotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H69H7F76LV;
@@ -314,6 +395,7 @@
 				483FFF831F15CA4E009E9D02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

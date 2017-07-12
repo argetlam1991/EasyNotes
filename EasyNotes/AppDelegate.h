@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@import UIKit;
+@import Firebase;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
