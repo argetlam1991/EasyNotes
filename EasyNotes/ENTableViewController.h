@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ENTableViewController.h
 //  EasyNotes
 //
 //  Created by Gu Han on 7/11/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ENTableViewController : UIViewController
 
 @end
-
