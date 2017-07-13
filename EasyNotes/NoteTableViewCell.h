@@ -1,5 +1,5 @@
 //
-//  ENTableViewController.h
+//  NoteTableViewCell.h
 //  EasyNotes
 //
 //  Created by Gu Han on 7/12/17.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ENTableViewController : UITableViewController
-
+@interface NoteTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *NoteLabel;
 @end
