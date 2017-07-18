@@ -10,9 +10,10 @@
 #import "NoteTableViewCell.h"
 #import "Notes.h"
 
-@interface ENTableViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ENTableViewController () <UITableViewDelegate, UITableViewDataSource, NotesDelegate>
 
 @property (strong, nonatomic) Notes *notes;
+@property (strong, nonatomic) IBOutlet UITableView *tableVIew;
 
 @end
 
@@ -27,12 +28,18 @@
   // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
   // self.navigationItem.rightBarButtonItem = self.editButtonItem;
   self.notes = [[Notes alloc] init];
-
+  self.notes.delegate = self;
+  [self.notes configureDatabase];
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+- (void) receiveNotesUpdateing {
+  NSLog(@"receive updateing");
+  [self.tableVIew reloadData];
 }
 
 #pragma mark - Table view data source
@@ -42,16 +49,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 3;
+  NSLog(@"row count: %lu", [[self.notes getNotes] count]);
+  return [[self.notes getNotes] count];
 }
 
 
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   NoteTableViewCell *cell = (NoteTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
-   // Configure the cell...
-   cell.NoteLabel.text = [self.notes getNoteByIndex:indexPath.row];
-   return cell;
- }
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  NoteTableViewCell *cell = (NoteTableViewCell *)[self.tableVIew dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
+  // Configure the cell...
+  NSLog(@"update view");
+  cell.NoteLabel.text = [self.notes getNoteByIndex:indexPath.row];
+  NSLog(@"showed: %@", cell.NoteLabel.text);
+  return cell;
+}
 
 
 /*

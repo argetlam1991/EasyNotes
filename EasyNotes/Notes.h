@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NotesDelegate.h"
 
 @interface Notes : NSObject
 
+- (void)configureDatabase;
 - (NSArray *) getNotes;
 - (NSString *) getNoteByIndex:(NSInteger)index;
+
+@property (weak, nonatomic) NSObject<NotesDelegate> *delegate;
 
 @end

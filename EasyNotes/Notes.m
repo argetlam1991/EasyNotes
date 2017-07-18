@@ -8,9 +8,15 @@
 
 #import "Notes.h"
 
-@interface Notes ()
+@import Firebase;
 
-@property (strong, nonatomic) NSArray *notes;
+@interface Notes () {
+  FIRDatabaseHandle _refHandle;
+}
+
+@property (strong, nonatomic) FIRDatabaseReference *ref;
+
+@property (strong, nonatomic) NSMutableArray *notes;
 
 @end
 
@@ -19,10 +25,29 @@
 - (Notes *)init {
   self = [super init];
   if (self) {
-    self.notes = @[@"notes1", @"notes2", @"notes3"];
+    self.ref = [[FIRDatabase database] reference];
+    self.notes = [[NSMutableArray alloc] init];
   }
   return self;
 }
+
+- (void)configureDatabase {
+  self.ref = [[FIRDatabase database] reference];
+  _refHandle = [[_ref child:@"notes"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot)
+  {
+    NSDictionary<NSString *, NSString *> *notes = snapshot.value;
+    NSString *note = notes[@"note"];
+    NSLog(@"received: %@", note);
+    [self.notes addObject:note];
+    NSLog(@"notes count: %lu", [self.notes count]);
+    
+    if (self.delegate) {
+      [self.delegate receiveNotesUpdateing];
+    }
+  }];
+}
+
+
 
 - (NSArray *) getNotes {
   return self.notes;

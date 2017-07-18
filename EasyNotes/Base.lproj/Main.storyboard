@@ -84,6 +84,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="tableVIew" destination="EMu-x0-whS" id="4uM-jj-YA4"/>
                         <outlet property="tableView" destination="EMu-x0-whS" id="4za-39-WkX"/>
                     </connections>
                 </tableViewController>
