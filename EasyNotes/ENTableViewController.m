@@ -9,6 +9,7 @@
 #import "ENTableViewController.h"
 #import "NoteTableViewCell.h"
 #import "Notes.h"
+#import "NoteHandler.h"
 
 @interface ENTableViewController () <UITableViewDelegate, UITableViewDataSource, NotesDelegate>
 
@@ -61,6 +62,13 @@
   cell.NoteLabel.text = [self.notes getNoteByIndex:indexPath.row];
   NSLog(@"showed: %@", cell.NoteLabel.text);
   return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  id<NoteHandler> child = (id<NoteHandler>)[segue destinationViewController];
+  NoteTableViewCell *source = (NoteTableViewCell *)sender;
+  NSString *item = source.NoteLabel.text;
+  [child receiveNote:item];
 }
 
 

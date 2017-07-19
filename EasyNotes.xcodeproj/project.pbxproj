@@ -17,6 +17,7 @@
 		4872E5551F1726140092FD83 /* ENTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4872E5541F1726140092FD83 /* ENTableViewController.m */; };
 		4872E5591F1727730092FD83 /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4872E5581F1727730092FD83 /* Notes.m */; };
 		4872E55C1F172D920092FD83 /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4872E55B1F172D920092FD83 /* NoteTableViewCell.m */; };
+		4872E5601F1F10BB0092FD83 /* EditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4872E55F1F1F10BB0092FD83 /* EditorViewController.m */; };
 		883CFB6B62D8C15DDE6B6B73 /* libPods-EasyNotes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A97DAF2B9CCCCB99CE452145 /* libPods-EasyNotes.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,9 @@
 		4872E55A1F172D920092FD83 /* NoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteTableViewCell.h; sourceTree = "<group>"; };
 		4872E55B1F172D920092FD83 /* NoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteTableViewCell.m; sourceTree = "<group>"; };
 		4872E55D1F1DCC980092FD83 /* NotesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesDelegate.h; sourceTree = "<group>"; };
+		4872E55E1F1F10BB0092FD83 /* EditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorViewController.h; sourceTree = "<group>"; };
+		4872E55F1F1F10BB0092FD83 /* EditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorViewController.m; sourceTree = "<group>"; };
+		4872E5611F1F13160092FD83 /* NoteHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteHandler.h; sourceTree = "<group>"; };
 		A97DAF2B9CCCCB99CE452145 /* libPods-EasyNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10E4486C0C602104E984058 /* Pods-EasyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyNotes/Pods-EasyNotes.release.xcconfig"; sourceTree = "<group>"; };
 		F38069CBBD9160E1A130F66F /* Pods-EasyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyNotes/Pods-EasyNotes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,10 +89,12 @@
 				483FFF871F15CFF7009E9D02 /* SignInViewController.m */,
 				4872E5531F1726140092FD83 /* ENTableViewController.h */,
 				4872E5541F1726140092FD83 /* ENTableViewController.m */,
-				483FFF761F15CA4E009E9D02 /* Main.storyboard */,
-				483FFF6D1F15CA4E009E9D02 /* Supporting Files */,
 				4872E55A1F172D920092FD83 /* NoteTableViewCell.h */,
 				4872E55B1F172D920092FD83 /* NoteTableViewCell.m */,
+				4872E55E1F1F10BB0092FD83 /* EditorViewController.h */,
+				4872E55F1F1F10BB0092FD83 /* EditorViewController.m */,
+				483FFF761F15CA4E009E9D02 /* Main.storyboard */,
+				483FFF6D1F15CA4E009E9D02 /* Supporting Files */,
 			);
 			path = EasyNotes;
 			sourceTree = "<group>";
@@ -110,6 +116,7 @@
 				4872E5571F1727730092FD83 /* Notes.h */,
 				4872E5581F1727730092FD83 /* Notes.m */,
 				4872E55D1F1DCC980092FD83 /* NotesDelegate.h */,
+				4872E5611F1F13160092FD83 /* NoteHandler.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -261,6 +268,7 @@
 				4872E55C1F172D920092FD83 /* NoteTableViewCell.m in Sources */,
 				483FFF721F15CA4E009E9D02 /* AppDelegate.m in Sources */,
 				483FFF6F1F15CA4E009E9D02 /* main.m in Sources */,
+				4872E5601F1F10BB0092FD83 /* EditorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
