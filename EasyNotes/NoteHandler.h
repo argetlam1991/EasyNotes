@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Notes.h"
+#import "Note.h"
 @protocol NoteHandler <NSObject>
-- (void) receiveNote:(NSString *) note;
+- (void) receiveNote:(Note *) note;
+- (void) receiveNotes:(Notes *) notes;
+- (void) receiveIndex:(NSUInteger) index;
 @end

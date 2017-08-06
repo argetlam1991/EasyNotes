@@ -35,26 +35,26 @@
   self.ref = [[FIRDatabase database] reference];
   _refHandle = [[_ref child:@"notes"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot)
   {
-    NSDictionary<NSString *, NSString *> *notes = snapshot.value;
-    NSString *note = notes[@"note"];
-    NSLog(@"received: %@", note);
-    [self.notes addObject:note];
-    NSLog(@"notes count: %lu", [self.notes count]);
-    
+    Note * newNote = [[Note alloc] initWithKey:snapshot.key AndContent:snapshot.value ];
+    [self.notes insertObject:newNote atIndex:0];
     if (self.delegate) {
       [self.delegate receiveNotesUpdateing];
     }
   }];
 }
 
-
-
-- (NSArray *) getNotes {
-  return self.notes;
+- (void) updateNote:(Note *)note atIndex:(NSUInteger)index{
+  [[[_ref child:@"notes"] child:note.key] removeValue];
+  [self.notes removeObjectAtIndex:index];
+  [[[_ref child:@"notes"] childByAutoId] setValue:note.content];
 }
 
-- (NSString *) getNoteByIndex:(NSInteger)index {
+- (Note *) getNoteAtIndex:(NSUInteger)index {
   return self.notes[index];
+}
+
+- (NSUInteger) getNotesCount {
+  return [self.notes count];
 }
 
 @end

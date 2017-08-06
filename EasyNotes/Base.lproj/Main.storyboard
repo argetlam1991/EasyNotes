@@ -37,12 +37,12 @@
                     </view>
                     <connections>
                         <outlet property="signInButton" destination="ecw-La-Q4y" id="yb1-VR-qsR"/>
-                        <segue destination="pxF-HN-WhS" kind="show" identifier="signInToENTable" id="EDp-bl-Po0"/>
+                        <segue destination="rq8-qn-IfA" kind="show" identifier="signInToENTable" id="Tbp-40-CgN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTc-Ol-cbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-802.39999999999998" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-1602" y="203"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="O9F-E6-UVW">
@@ -84,6 +84,7 @@
                             <outlet property="delegate" destination="pxF-HN-WhS" id="k72-jQ-Pqa"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Djy-dP-wQn"/>
                     <connections>
                         <outlet property="tableVIew" destination="EMu-x0-whS" id="4uM-jj-YA4"/>
                         <outlet property="tableView" destination="EMu-x0-whS" id="4za-39-WkX"/>
@@ -91,7 +92,23 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTC-2N-3JC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="134"/>
+            <point key="canvasLocation" x="102" y="203"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DU2-yc-SQq">
+            <objects>
+                <navigationController id="rq8-qn-IfA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="del-8Q-wsI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pxF-HN-WhS" kind="relationship" relationship="rootViewController" id="28M-iD-xJR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nrk-ny-wIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-758" y="203"/>
         </scene>
         <!--Editor View Controller-->
         <scene sceneID="aXj-bG-cxF">
@@ -106,7 +123,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Suu-Mt-Jh5">
-                                <rect key="frame" x="16" y="28" width="343" height="639"/>
+                                <rect key="frame" x="16" y="72" width="343" height="595"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -127,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbA-rE-p9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="133.5832083958021"/>
+            <point key="canvasLocation" x="900" y="203"/>
         </scene>
     </scenes>
 </document>

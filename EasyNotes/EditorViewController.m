@@ -10,9 +10,10 @@
 #import "NoteHandler.h"
 
 @interface EditorViewController () <NoteHandler>
-@property (strong, nonatomic) NSString *note;
+@property (strong, nonatomic) Note *note;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
-
+@property (strong, nonatomic) Notes *notes;
+@property (nonatomic) NSUInteger index;
 
 @end
 
@@ -22,9 +23,12 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view.
   if (self.note) {
-      self.textView.text = self.note;
+      self.textView.text = [self.note getNoteText];
   }
+}
 
+- (void) viewWillDisappear:(BOOL)animated {
+  [self saveNote];
   
   
 }
@@ -34,8 +38,22 @@
   // Dispose of any resources that can be recreated.
 }
 
-- (void) receiveNote:(NSString *)note {
+- (void) receiveNotes:(Notes *)notes {
+  self.notes = notes;
+}
+
+- (void) receiveNote:(Note *)note {
   self.note = note;
+}
+
+- (void) receiveIndex:(NSUInteger)index {
+  self.index = index;
+  
+}
+- (void) saveNote {
+  NSString* noteText = self.textView.text;
+  [self.note updateNote:noteText];
+  [self.notes updateNote:self.note atIndex:self.index];
 }
 
 /*

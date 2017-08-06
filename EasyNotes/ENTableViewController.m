@@ -50,8 +50,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  NSLog(@"row count: %lu", [[self.notes getNotes] count]);
-  return [[self.notes getNotes] count];
+  NSLog(@"row count: %lu", [self.notes getNotesCount]);
+  return [self.notes getNotesCount];
 }
 
 
@@ -59,7 +59,9 @@
   NoteTableViewCell *cell = (NoteTableViewCell *)[self.tableVIew dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
   // Configure the cell...
   NSLog(@"update view");
-  cell.NoteLabel.text = [self.notes getNoteByIndex:indexPath.row];
+  cell.index = indexPath.row;
+  
+  [cell receiveNote:[self.notes getNoteAtIndex:indexPath.row]];
   NSLog(@"showed: %@", cell.NoteLabel.text);
   return cell;
 }
@@ -67,8 +69,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   id<NoteHandler> child = (id<NoteHandler>)[segue destinationViewController];
   NoteTableViewCell *source = (NoteTableViewCell *)sender;
-  NSString *item = source.NoteLabel.text;
+  Note *item = source.note;
+  [child receiveNotes:self.notes];
   [child receiveNote:item];
+  [child receiveIndex:source.index];
 }
 
 

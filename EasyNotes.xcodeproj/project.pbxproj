@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48198F001F3685EB00A194C3 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 48198EFF1F3685EB00A194C3 /* Note.m */; };
 		483FFF6F1F15CA4E009E9D02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 483FFF6E1F15CA4E009E9D02 /* main.m */; };
 		483FFF721F15CA4E009E9D02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 483FFF711F15CA4E009E9D02 /* AppDelegate.m */; };
 		483FFF781F15CA4E009E9D02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483FFF761F15CA4E009E9D02 /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48198EFE1F3685EB00A194C3 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		48198EFF1F3685EB00A194C3 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		483FFF6A1F15CA4E009E9D02 /* EasyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		483FFF6E1F15CA4E009E9D02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		483FFF701F15CA4E009E9D02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				4872E5581F1727730092FD83 /* Notes.m */,
 				4872E55D1F1DCC980092FD83 /* NotesDelegate.h */,
 				4872E5611F1F13160092FD83 /* NoteHandler.h */,
+				48198EFE1F3685EB00A194C3 /* Note.h */,
+				48198EFF1F3685EB00A194C3 /* Note.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				483FFF721F15CA4E009E9D02 /* AppDelegate.m in Sources */,
 				483FFF6F1F15CA4E009E9D02 /* main.m in Sources */,
 				4872E5601F1F10BB0092FD83 /* EditorViewController.m in Sources */,
+				48198F001F3685EB00A194C3 /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

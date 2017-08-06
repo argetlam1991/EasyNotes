@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "NotesDelegate.h"
+#import "Note.h"
+
 
 @interface Notes : NSObject
 
-- (void)configureDatabase;
-- (NSArray *) getNotes;
-- (NSString *) getNoteByIndex:(NSInteger)index;
+- (void) configureDatabase;
+- (NSUInteger) getNotesCount;
+- (Note *) getNoteAtIndex:(NSUInteger) index;
+- (void) updateNote:(Note *)note atIndex:(NSUInteger) index;
 
 @property (weak, nonatomic) NSObject<NotesDelegate> *delegate;
 

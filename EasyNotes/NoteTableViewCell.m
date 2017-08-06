@@ -8,6 +8,11 @@
 
 #import "NoteTableViewCell.h"
 
+@interface NoteTableViewCell()
+
+
+@end
+
 @implementation NoteTableViewCell
 
 - (void)awakeFromNib {
@@ -19,6 +24,15 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void) receiveNote:(Note *)note {
+  self.note = note;
+  [self updateView];
+}
+
+- (void) updateView {
+  self.NoteLabel.text = [self.note getNoteText];
 }
 
 @end
