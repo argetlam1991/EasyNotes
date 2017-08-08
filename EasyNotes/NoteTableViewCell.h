@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Note.h"
 
+
 @interface NoteTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *NoteLabel;
@@ -16,4 +17,5 @@
 @property (nonatomic) NSUInteger index;
 
 - (void) receiveNote:(Note *) note;
+
 @end

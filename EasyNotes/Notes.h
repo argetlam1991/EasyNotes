@@ -13,12 +13,12 @@
 
 @interface Notes : NSObject
 
+@property (weak, nonatomic) NSObject<NotesDelegate> *delegate;
+
 - (void) configureDatabase;
 - (NSUInteger) getNotesCount;
 - (Note *) getNoteAtIndex:(NSUInteger) index;
 - (void) updateNote:(Note *)note atIndex:(NSUInteger) index;
 - (void) addNote:(Note *)note;
-
-@property (weak, nonatomic) NSObject<NotesDelegate> *delegate;
 
 @end

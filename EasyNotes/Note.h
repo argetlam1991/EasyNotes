@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface Note : NSObject
 
 @property (strong, nonatomic) NSString *key;

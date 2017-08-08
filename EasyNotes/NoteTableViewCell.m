@@ -8,8 +8,8 @@
 
 #import "NoteTableViewCell.h"
 
-@interface NoteTableViewCell()
 
+@interface NoteTableViewCell()
 
 @end
 

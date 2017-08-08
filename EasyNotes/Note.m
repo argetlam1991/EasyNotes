@@ -8,6 +8,7 @@
 
 #import "Note.h"
 
+
 @implementation Note
 
 - (Note *)initWithKey:(NSString *) key AndContent:(NSMutableDictionary *) content {

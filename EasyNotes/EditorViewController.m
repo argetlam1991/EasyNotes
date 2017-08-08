@@ -9,7 +9,9 @@
 #import "EditorViewController.h"
 #import "NoteHandler.h"
 
+
 @interface EditorViewController () <NoteHandler>
+
 @property (strong, nonatomic) Note *note;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) Notes *notes;
@@ -29,8 +31,6 @@
 
 - (void) viewWillDisappear:(BOOL)animated {
   [self saveNote];
-  
-  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,6 +50,7 @@
   self.index = index;
   
 }
+
 - (void) saveNote {
   NSString *noteText = self.textView.text;
   if (self.note) {
@@ -57,26 +58,13 @@
     [self.notes updateNote:self.note atIndex:self.index];
   } else {
     if ([noteText length] > 0) {
-      Note *note = [[Note alloc] initWithKey:@"newNote" AndContent:
+      Note *note = [[Note alloc] initWithKey:nil AndContent:
                     [[NSMutableDictionary alloc] initWithDictionary:@{
                                                                       @"note": noteText
                                                                        }]];
       [self.notes addNote:note];
     }
-
   }
-  
-
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

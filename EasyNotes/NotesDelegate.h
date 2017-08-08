@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @protocol NotesDelegate <NSObject>
 
 - (void) receiveNotesUpdateing;

@@ -15,7 +15,6 @@
 }
 
 @property (strong, nonatomic) FIRDatabaseReference *ref;
-
 @property (strong, nonatomic) NSMutableArray *notes;
 
 @end
