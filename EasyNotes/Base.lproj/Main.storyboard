@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="s6o-0y-RZu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="s6o-0y-RZu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -84,7 +84,13 @@
                             <outlet property="delegate" destination="pxF-HN-WhS" id="k72-jQ-Pqa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Djy-dP-wQn"/>
+                    <navigationItem key="navigationItem" id="Djy-dP-wQn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="l7N-j2-7O9">
+                            <connections>
+                                <segue destination="W7e-5W-KUy" kind="show" id="DMt-Z3-GMo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableVIew" destination="EMu-x0-whS" id="4uM-jj-YA4"/>
                         <outlet property="tableView" destination="EMu-x0-whS" id="4za-39-WkX"/>
@@ -98,7 +104,7 @@
         <scene sceneID="DU2-yc-SQq">
             <objects>
                 <navigationController id="rq8-qn-IfA" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="del-8Q-wsI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="del-8Q-wsI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -147,4 +153,7 @@
             <point key="canvasLocation" x="900" y="203"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DMt-Z3-GMo"/>
+    </inferredMetricsTieBreakers>
 </document>

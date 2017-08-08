@@ -23,7 +23,7 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view.
   if (self.note) {
-      self.textView.text = [self.note getNoteText];
+    self.textView.text = [self.note getNoteText];
   }
 }
 
@@ -51,9 +51,22 @@
   
 }
 - (void) saveNote {
-  NSString* noteText = self.textView.text;
-  [self.note updateNote:noteText];
-  [self.notes updateNote:self.note atIndex:self.index];
+  NSString *noteText = self.textView.text;
+  if (self.note) {
+    [self.note updateNote:noteText];
+    [self.notes updateNote:self.note atIndex:self.index];
+  } else {
+    if ([noteText length] > 0) {
+      Note *note = [[Note alloc] initWithKey:@"newNote" AndContent:
+                    [[NSMutableDictionary alloc] initWithDictionary:@{
+                                                                      @"note": noteText
+                                                                       }]];
+      [self.notes addNote:note];
+    }
+
+  }
+  
+
 }
 
 /*

@@ -49,6 +49,10 @@
   [[[_ref child:@"notes"] childByAutoId] setValue:note.content];
 }
 
+- (void) addNote:(Note *)note {
+  [[[_ref child:@"notes"] childByAutoId] setValue:note.content];
+}
+
 - (Note *) getNoteAtIndex:(NSUInteger)index {
   return self.notes[index];
 }

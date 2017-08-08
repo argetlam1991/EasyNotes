@@ -68,11 +68,17 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   id<NoteHandler> child = (id<NoteHandler>)[segue destinationViewController];
-  NoteTableViewCell *source = (NoteTableViewCell *)sender;
-  Note *item = source.note;
   [child receiveNotes:self.notes];
-  [child receiveNote:item];
-  [child receiveIndex:source.index];
+
+  if([sender isMemberOfClass:[UIBarButtonItem class]]) {
+    //TO DO: add new Notes
+    
+  } else {
+    NoteTableViewCell *source = (NoteTableViewCell *)sender;
+    Note *item = source.note;
+    [child receiveNote:item];
+    [child receiveIndex:source.index];
+  }
 }
 
 
