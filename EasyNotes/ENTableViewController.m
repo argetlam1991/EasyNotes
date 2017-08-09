@@ -46,6 +46,17 @@
 
 #pragma mark - Table view data source
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+  return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+  NoteTableViewCell *cell = (NoteTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+  Note *toDelete = cell.note;
+  [self.notes deleteNote:toDelete atIndex:indexPath.row];
+  [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   return 1;
 }
@@ -60,7 +71,6 @@
   // Configure the cell...
   NSLog(@"update view");
   cell.index = indexPath.row;
-  
   [cell receiveNote:[self.notes getNoteAtIndex:indexPath.row]];
   NSLog(@"showed: %@", cell.NoteLabel.text);
   return cell;

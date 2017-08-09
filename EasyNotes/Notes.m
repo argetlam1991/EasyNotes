@@ -52,6 +52,11 @@
   [[[_ref child:@"notes"] childByAutoId] setValue:note.content];
 }
 
+- (void) deleteNote:(Note *)note atIndex:(NSUInteger)index{
+  [[[_ref child:@"notes"] child:note.key] removeValue];
+  [self.notes removeObjectAtIndex:index];
+}
+
 - (Note *) getNoteAtIndex:(NSUInteger)index {
   return self.notes[index];
 }

@@ -20,5 +20,6 @@
 - (Note *) getNoteAtIndex:(NSUInteger) index;
 - (void) updateNote:(Note *)note atIndex:(NSUInteger) index;
 - (void) addNote:(Note *)note;
+- (void) deleteNote:(Note *)note atIndex:(NSUInteger)index;
 
 @end
