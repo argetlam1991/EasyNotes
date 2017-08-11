@@ -10,13 +10,13 @@
 #import "NoteHandler.h"
 
 
-@interface EditorViewController () <NoteHandler>
+@interface EditorViewController () <NoteHandler, UITextViewDelegate>
 
 @property (strong, nonatomic) Note *note;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) Notes *notes;
 @property (nonatomic) NSUInteger index;
-
+@property (nonatomic) BOOL modified;
 @end
 
 @implementation EditorViewController
@@ -24,13 +24,18 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
+  self.textView.delegate = self;
+  self.modified = NO;
   if (self.note) {
     self.textView.text = [self.note getNoteText];
   }
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
-  [self saveNote];
+  if (self.modified) {
+      [self saveNote];
+  }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,6 +70,11 @@
       [self.notes addNote:note];
     }
   }
+}
+
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+  self.modified = YES;
 }
 
 @end
