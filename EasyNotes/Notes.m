@@ -32,9 +32,9 @@
 
 - (void)configureDatabase {
   self.ref = [[FIRDatabase database] reference];
-  _refHandle = [[_ref child:@"notes"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot)
+  _refHandle = [[[_ref child:@"users"] child:[FIRAuth auth].currentUser.uid] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot)
   {
-    Note * newNote = [[Note alloc] initWithKey:snapshot.key AndContent:snapshot.value ];
+    Note * newNote = [[Note alloc] initWithKey:snapshot.key AndContent:snapshot.value];
     [self.notes insertObject:newNote atIndex:0];
     if (self.delegate) {
       [self.delegate receiveNotesUpdateing];
@@ -43,17 +43,17 @@
 }
 
 - (void) updateNote:(Note *)note atIndex:(NSUInteger)index{
-  [[[_ref child:@"notes"] child:note.key] removeValue];
+  [[[[_ref child:@"users"] child:[FIRAuth auth].currentUser.uid] child:note.key] removeValue];
   [self.notes removeObjectAtIndex:index];
-  [[[_ref child:@"notes"] childByAutoId] setValue:note.content];
+  [[[[_ref child:@"users"] child:[FIRAuth auth].currentUser.uid] childByAutoId] setValue:note.content];
 }
 
 - (void) addNote:(Note *)note {
-  [[[_ref child:@"notes"] childByAutoId] setValue:note.content];
+  [[[[_ref child:@"users"] child:[FIRAuth auth].currentUser.uid] childByAutoId] setValue:note.content];
 }
 
 - (void) deleteNote:(Note *)note atIndex:(NSUInteger)index{
-  [[[_ref child:@"notes"] child:note.key] removeValue];
+  [[[[_ref child:@"users"] child:[FIRAuth auth].currentUser.uid] child:note.key] removeValue];
   [self.notes removeObjectAtIndex:index];
 }
 
